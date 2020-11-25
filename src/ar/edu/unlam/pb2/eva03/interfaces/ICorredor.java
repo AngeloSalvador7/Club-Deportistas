@@ -4,4 +4,5 @@ public interface ICorredor {
 
 	public void setCantidadDeKilometrosEntrenados(Integer km);
 	public Integer getCantidadDeKilometrosEntrenados();
+	public String getSoyCorredor();
 }
