@@ -65,7 +65,7 @@ public class PruebaEva03 {
 	}
 	
 	@Test (expected = NoEstaPreparado.class)
-	public void  queUnCorredorNoSePuedaInscribirEnUnaCarreraDeNatacion () throws NoEstaPreparado{	
+	public void  queUnCorredorNoSePuedaInscribirEnUnaCarreraDeNatacion () throws NoEstaPreparado, NoExisteElEventoSolicitado{	
 		// En las carreras de natación sólo pueden inscribirse los que sean INadador
 		Deportista celeste = new Corredor(1000, "Celeste", 10000);
 		Club actual = new Club("Sitas");
@@ -76,7 +76,7 @@ public class PruebaEva03 {
 	}
 	
 	@Test (expected = NoEstaPreparado.class)
-	public void  queUnCorredorNoSePuedaInscribirEnUnTriatlon () throws NoEstaPreparado{		
+	public void  queUnCorredorNoSePuedaInscribirEnUnTriatlon () throws NoEstaPreparado, NoExisteElEventoSolicitado{		
 		// En los triatlones sólo pueden inscribirse los que sean INadador & ICiclista
 		Deportista celeste = new Corredor(1000, "Celeste", 10000);
 		Club actual = new Club("Sitas");
@@ -87,7 +87,7 @@ public class PruebaEva03 {
 	}
 	
 	@Test
-	public void  queUnCorredorPuedaCorrerUnaMaraton() throws NoEstaPreparado{		
+	public void  queUnCorredorPuedaCorrerUnaMaraton() throws NoEstaPreparado, NoExisteElEventoSolicitado{		
 		Deportista celeste = new Corredor(999, "Celeste", 42000);
 		Club actual = new Club("Moron");
 				

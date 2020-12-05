@@ -14,10 +14,11 @@ public class Triatleta extends Deportista implements ICiclista, ICorredor, INada
 	private String soyNadador = "Yo se nadar";
 	private String soyCiclista = "Yo se andar en Bici.";
 	
-	public Triatleta(Integer numeroDeSocio, String nombre, String distanciaPreferida, TipoDeBicicleta tria) {
+	public Triatleta(Integer numeroDeSocio, String nombre, String distanciaPreferida, TipoDeBicicleta bici) {
 		super(numeroDeSocio, nombre);
 		this.distanciaPreferida = distanciaPreferida;
 		this.cantidadDeKilometrosEntrenados= 0;
+		this.tipoDeBicicleta = bici;
 	}
 
 	public String getDistanciaPreferida() {
@@ -29,7 +30,7 @@ public class Triatleta extends Deportista implements ICiclista, ICorredor, INada
 	}
 
 	public TipoDeBicicleta getTipoDeBicicleta() {
-		return tipoDeBicicleta.TRIA;
+		return tipoDeBicicleta;
 	}
 
 	public void setTipoDeBicicleta(TipoDeBicicleta tipoDeBicicleta) {

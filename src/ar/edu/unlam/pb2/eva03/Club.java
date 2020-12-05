@@ -44,24 +44,20 @@ public class Club {
 	}
 
 	public boolean agregarDeportista(Deportista deportista) {
-		if(this.socios.add(deportista))
-			return true;
-		
-		return false;
+		return this.socios.add(deportista);
 	}
 
 	public Integer getCantidadSocios() {
 		return this.socios.size();
 	}
 
-	public void crearEvento(TipoDeEvento tipo, String nombre) {
-		competencias.put(nombre, new Evento (tipo, null));
+	public void crearEvento(TipoDeEvento evento, String desc) {
+		this.competencias.putIfAbsent(desc, new Evento(evento));
 	}
 
-	public Integer inscribirEnEvento(String string, Deportista celeste) {
-		Integer numeroDeInscripcion = 0;
-		Evento deseado = competencias.get(string);
-		return numeroDeInscripcion;
+	public Integer inscribirEnEvento(String evento, Deportista depor) throws NoEstaPreparado, NoExisteElEventoSolicitado {
+		if(this.competencias.get(evento) == null) throw new NoExisteElEventoSolicitado();
+		return this.competencias.get(evento).inscribirParticipante(depor);
 	}
 	
 	
